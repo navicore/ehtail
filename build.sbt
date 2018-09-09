@@ -42,6 +42,8 @@ libraryDependencies ++=
 
     "org.json4s" %% "json4s-native" % "3.6.1",
 
+    "org.rogach" %% "scallop" % "3.1.3",
+
     "org.scalatest" %% "scalatest" % "3.0.1" % "test"
 
   )
@@ -51,7 +53,7 @@ dependencyOverrides ++= Seq(
   "com.typesafe.akka" %% "akka-stream" % akkaVersion
 )
 
-mainClass in assembly := Some("onextent.akka.azure.ehtail.Main")
+mainClass in assembly := Some("onextent.akka.azure.ehtail.Cli")
 assemblyJarName in assembly := "EhTail.jar"
 
 assemblyMergeStrategy in assembly := {

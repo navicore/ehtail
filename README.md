@@ -13,18 +13,18 @@ sbt assembly
 
 ## USAGE
 
+#### for help
 ```console
-export EVENTHUBS_1_CONNSTR="CHANGE ME"
-export EVENTHUBS_1_CONSUMER_GROUP="CHANGE ME"
-export EVENTHUBS_1_PARTITION_COUNT="?"
-#export EVENTHUBS_1_DEFAULT_OFFSET="earliest"  # 'latest' is default
-#export PRETTY="true" # default
-export EVENTHUBS_1_RECEIVER_TIMEOUT="8h"  # long timeouts decrease noise in restarts - restarts are also work-in-progress and are buggy
-
-java -jar target/scala-2.12/EhTail.jar
+java -jar target/scala-2.12/EhTail.jar -h
 ```
 
-## KNOWN BUGS
+#### for reading all messages from the beginning of an eh with 8 partitions
+```console
+java -jar target/scala-2.12/EhTail.jar -c myConsumerGroup -o EARLIEST -p 8 "Endpoint=sb://CHANGEME.servicebus.windows.net/;SharedAccessKeyName=CHANGEME;SharedAccessKey=CHANGEME=;EntityPath=CHANGEME"
+```
 
-* may not reliably reconnect after default timeout of 2 minutes (workaround is increase `EVENTHUBS_1_RECEIVER_TIMEOUT`)
+#### for reading all new messages with pretty print
+```console
+java -jar target/scala-2.12/EhTail.jar --pretty -c myConsumerGroup -p 8 "Endpoint=sb://CHANGEME.servicebus.windows.net/;SharedAccessKeyName=CHANGEME;SharedAccessKey=CHANGEME=;EntityPath=CHANGEME"
+```
 
