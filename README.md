@@ -21,7 +21,7 @@ export EVENTHUBS_1_PARTITION_COUNT="?"
 #export PRETTY="true" # default
 export EVENTHUBS_1_RECEIVER_TIMEOUT="8h"  # long timeouts decrease noise in restarts - restarts are also work-in-progress and are buggy
 
-java 
+java -jar target/scala-2.12/EhTail.jar
 ```
 
 ## KNOWN BUGS
