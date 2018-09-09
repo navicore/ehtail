@@ -6,11 +6,11 @@
         </encoder>
     </appender>
 
-    <root level="${SYS_LOG_LEVEL:-warn}">
+    <root level="${SYS_LOG_LEVEL:-error}">
         <appender-ref ref="STDOUT"/>
     </root>
 
-    <logger name="onextent" level="${LOG_LEVEL:-info}"/>
+    <logger name="onextent" level="${LOG_LEVEL:-error}"/>
 
 </configuration>
 
