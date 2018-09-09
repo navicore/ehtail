@@ -11,7 +11,6 @@ cd ehtail
 sbt assembly
 ```
 
-
 ## USAGE
 
 ```console
@@ -21,5 +20,11 @@ export EVENTHUBS_1_PARTITION_COUNT="?"
 #export EVENTHUBS_1_DEFAULT_OFFSET="earliest"  # 'latest' is default
 #export PRETTY="true" # default
 export EVENTHUBS_1_RECEIVER_TIMEOUT="8h"  # long timeouts decrease noise in restarts - restarts are also work-in-progress and are buggy
+
+java 
 ```
+
+## KNOWN BUGS
+
+* may not reliably reconnect after default timeout of 2 minutes (workaround is increase `EVENTHUBS_1_RECEIVER_TIMEOUT`)
 
