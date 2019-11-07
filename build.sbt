@@ -26,8 +26,8 @@ libraryDependencies ++=
   Seq(
     "tech.navicore" %% "akkaeventhubs" % "0.9.6",
 
+    "com.typesafe" % "config" % "1.3.4",
     "ch.qos.logback" % "logback-classic" % "1.1.11",
-    "com.typesafe" % "config" % "1.3.1",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.5.0",
 
     //"tech.navicore" %% "navipath" % "0.1.6",
