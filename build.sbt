@@ -35,7 +35,7 @@ libraryDependencies ++=
     "com.typesafe.akka" %% "akka-actor" % akkaVersion,
     "com.typesafe.akka" %% "akka-stream" % akkaVersion,
 
-    "com.github.scullxbones" %% "akka-persistence-mongo-casbah" % "2.0.4",
+    "com.github.scullxbones" %% "akka-persistence-mongo-casbah" % "2.0.12",
     "org.mongodb" %% "casbah-core" % "3.1.1",
 
     "com.hootsuite" %% "akka-persistence-redis" % "0.7.0",
