@@ -24,10 +24,10 @@ resolvers += Resolver.jcenterRepo // for redis
 
 libraryDependencies ++=
   Seq(
-    "tech.navicore" %% "akkaeventhubs" % "0.9.3",
+    "tech.navicore" %% "akkaeventhubs" % "0.9.6",
 
-    "ch.qos.logback" % "logback-classic" % "1.1.7",
     "com.typesafe" % "config" % "1.3.4",
+    "ch.qos.logback" % "logback-classic" % "1.1.11",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.5.0",
 
     //"tech.navicore" %% "navipath" % "0.1.6",
@@ -35,10 +35,10 @@ libraryDependencies ++=
     "com.typesafe.akka" %% "akka-actor" % akkaVersion,
     "com.typesafe.akka" %% "akka-stream" % akkaVersion,
 
-    "com.github.scullxbones" %% "akka-persistence-mongo-casbah" % "2.0.4",
+    "com.github.scullxbones" %% "akka-persistence-mongo-casbah" % "2.0.12",
     "org.mongodb" %% "casbah-core" % "3.1.1",
 
-    "com.hootsuite" %% "akka-persistence-redis" % "0.7.0",
+    "com.hootsuite" %% "akka-persistence-redis" % "0.7.2",
 
     "org.json4s" %% "json4s-native" % "3.6.1",
 
