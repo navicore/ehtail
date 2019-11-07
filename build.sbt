@@ -38,7 +38,7 @@ libraryDependencies ++=
     "com.github.scullxbones" %% "akka-persistence-mongo-casbah" % "2.0.12",
     "org.mongodb" %% "casbah-core" % "3.1.1",
 
-    "com.hootsuite" %% "akka-persistence-redis" % "0.7.2",
+    "com.hootsuite" %% "akka-persistence-redis" % "0.9.0",
 
     "org.json4s" %% "json4s-native" % "3.6.7",
 
