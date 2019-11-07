@@ -28,17 +28,18 @@ libraryDependencies ++=
 
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2",
     "com.typesafe" % "config" % "1.4.0",
-    "ch.qos.logback" % "logback-classic" % "1.1.11",
+
+    "ch.qos.logback" % "logback-classic" % "1.2.3",
 
     //"tech.navicore" %% "navipath" % "0.1.6",
 
     "com.typesafe.akka" %% "akka-actor" % akkaVersion,
     "com.typesafe.akka" %% "akka-stream" % akkaVersion,
 
-    "com.github.scullxbones" %% "akka-persistence-mongo-casbah" % "2.0.12",
+    "com.github.scullxbones" %% "akka-persistence-mongo-casbah" % "2.3.1",
     "org.mongodb" %% "casbah-core" % "3.1.1",
 
-    "com.hootsuite" %% "akka-persistence-redis" % "0.7.2",
+    "com.hootsuite" %% "akka-persistence-redis" % "0.9.0",
 
     "org.json4s" %% "json4s-native" % "3.6.7",
 
