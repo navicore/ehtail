@@ -28,7 +28,7 @@ libraryDependencies ++=
 
     "ch.qos.logback" % "logback-classic" % "1.1.7",
     "com.typesafe" % "config" % "1.3.1",
-    "com.typesafe.scala-logging" %% "scala-logging" % "3.5.0",
+    "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2",
 
     //"tech.navicore" %% "navipath" % "0.1.6",
 
