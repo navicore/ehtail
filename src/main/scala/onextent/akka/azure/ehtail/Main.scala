@@ -14,6 +14,7 @@ import scala.concurrent.Future
 
 object Run {
 
+  /*
   def apply(): Unit = {
 
     val consumer: Sink[(String, AckableOffset), Future[Done]] =
@@ -44,11 +45,12 @@ object Run {
 
     }
   }
+   */
 
 }
 
 object Main extends App {
 
-  Run()
+  //Run()
 
 }

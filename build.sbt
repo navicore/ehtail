@@ -13,7 +13,6 @@ parallelExecution in test := false
 version := "0.1.0"
 
 val scala212 = "2.12.11"
-//val scala212 = "2.11.12"
 
 scalaVersion := scala212
 
@@ -25,22 +24,17 @@ resolvers += Resolver.jcenterRepo // for redis
 
 libraryDependencies ++=
   Seq(
+
     "tech.navicore" %% "akkaeventhubs" % "1.4.1",
 
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2",
+
     "com.typesafe" % "config" % "1.4.0",
 
     "ch.qos.logback" % "logback-classic" % "1.2.3",
 
-    //"tech.navicore" %% "navipath" % "0.1.6",
-
     "com.typesafe.akka" %% "akka-actor" % akkaVersion,
     "com.typesafe.akka" %% "akka-stream" % akkaVersion,
-
-    "com.github.scullxbones" %% "akka-persistence-mongo-casbah" % "2.3.3",
-    "org.mongodb" %% "casbah-core" % "3.1.1",
-
-    "com.hootsuite" %% "akka-persistence-redis" % "0.9.0",
 
     "org.json4s" %% "json4s-native" % "3.6.8",
 
