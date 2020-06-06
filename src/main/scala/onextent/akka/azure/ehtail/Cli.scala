@@ -14,13 +14,13 @@ import org.rogach.scallop._
 import scala.concurrent.Future
 
 class CliConf(arguments: Seq[String]) extends ScallopConf(arguments) {
-  val partitions: ScallopOption[Int] = opt[Int](required = true, descr = "total number of partitions to read from - check Azure portal")
-  val offset: ScallopOption[String] = opt[String](required = false, default = None, descr = "read from LATEST or EARLIEST")
-  val pretty: ScallopOption[Boolean] = opt[Boolean](required = false, descr = "pretty print json")
-  val line: ScallopOption[Boolean] = opt[Boolean](required = false, descr = "remove newline characters" )
-  val verbose: ScallopOption[Boolean] = opt[Boolean](required = false, descr = "print partition ID and offset info between each record")
-  val consumerGroup: ScallopOption[String] = opt[String](required = false, descr = "will use $Default if not specified")
-  val connString: ScallopOption[String] = trailArg[String](required = true, descr = "'listen' policy enabled connection string from Azure portal")
+  val partitions: ScallopOption[Int] = opt[Int](required = true, descr = "Total partitions; ie: '4' means read from zero-indexed IDs 0, 1, 2, and 3")
+  val offset: ScallopOption[String] = opt[String](required = false, default = None, descr = "Read from LATEST or EARLIEST;  Default = LATEST")
+  val pretty: ScallopOption[Boolean] = opt[Boolean](required = false, descr = "Pretty-print json")
+  val line: ScallopOption[Boolean] = opt[Boolean](required = false, descr = "Remove newline characters" )
+  val verbose: ScallopOption[Boolean] = opt[Boolean](required = false, descr = "Print partition ID between records")
+  val consumerGroup: ScallopOption[String] = opt[String](required = false, descr = "Consumer group; Default = $Default")
+  val connString: ScallopOption[String] = trailArg[String](required = true, descr = "'listen' policy connection string")
   verify()
 }
 
