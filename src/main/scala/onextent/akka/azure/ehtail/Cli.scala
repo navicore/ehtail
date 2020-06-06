@@ -14,13 +14,13 @@ import org.rogach.scallop._
 import scala.concurrent.Future
 
 class CliConf(arguments: Seq[String]) extends ScallopConf(arguments) {
-  val partitions: ScallopOption[Int] = opt[Int](required = true)
-  val offset: ScallopOption[String] = opt[String](required = false, default = None)
+  val partitions: ScallopOption[Int] = opt[Int](required = true, descr = "total number of partitions to read from - check Azure portal")
+  val offset: ScallopOption[String] = opt[String](required = false, default = None, descr = "read from LATEST or EARLIEST")
   val pretty: ScallopOption[Boolean] = opt[Boolean](required = false, descr = "pretty print json")
   val line: ScallopOption[Boolean] = opt[Boolean](required = false, descr = "remove newline characters" )
-  val verbose: ScallopOption[Boolean] = opt[Boolean](required = false, descr = "print PID and offset info between each record")
-  val consumerGroup: ScallopOption[String] = opt[String](required = false)
-  val connString: ScallopOption[String] = trailArg[String](required = true)
+  val verbose: ScallopOption[Boolean] = opt[Boolean](required = false, descr = "print partition ID and offset info between each record")
+  val consumerGroup: ScallopOption[String] = opt[String](required = false, descr = "will use $Default if not specified")
+  val connString: ScallopOption[String] = trailArg[String](required = true, descr = "'listen' policy enabled connection string from Azure portal")
   verify()
 }
 
