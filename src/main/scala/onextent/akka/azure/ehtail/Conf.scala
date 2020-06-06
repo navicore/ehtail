@@ -3,7 +3,7 @@ package onextent.akka.azure.ehtail
 import akka.actor.ActorSystem
 import akka.pattern.AskTimeoutException
 import akka.serialization.SerializationExtension
-import akka.stream.{ActorMaterializer, ActorMaterializerSettings, Supervision}
+import akka.stream._
 import com.typesafe.config.{Config, ConfigFactory}
 import com.typesafe.scalalogging.LazyLogging
 
@@ -32,8 +32,7 @@ object Conf extends LazyLogging {
 
   }
 
-  implicit val materializer: ActorMaterializer = ActorMaterializer(
-    ActorMaterializerSettings(actorSystem).withSupervisionStrategy(decider))
+  implicit val materializer: Materializer = Materializer.createMaterializer(actorSystem)
 
 }
 

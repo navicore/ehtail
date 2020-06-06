@@ -15,8 +15,10 @@ import scala.concurrent.Future
 
 class CliConf(arguments: Seq[String]) extends ScallopConf(arguments) {
   val partitions: ScallopOption[Int] = opt[Int](required = true)
-  val offset: ScallopOption[String] = opt[String](required = false)
-  val pretty: ScallopOption[Boolean] = opt[Boolean](required = false)
+  val offset: ScallopOption[String] = opt[String](required = false, default = None)
+  val pretty: ScallopOption[Boolean] = opt[Boolean](required = false, descr = "pretty print json")
+  val line: ScallopOption[Boolean] = opt[Boolean](required = false, descr = "remove newline characters" )
+  val verbose: ScallopOption[Boolean] = opt[Boolean](required = false, descr = "print PID and offset info between each record")
   val consumerGroup: ScallopOption[String] = opt[String](required = false)
   val connString: ScallopOption[String] = trailArg[String](required = true)
   verify()
@@ -24,7 +26,7 @@ class CliConf(arguments: Seq[String]) extends ScallopConf(arguments) {
 
 object Go {
 
-  def apply(cfg: Config, pp: Boolean): Unit = {
+  def apply(cfg: Config, pp: Boolean, line: Boolean, verbose: Boolean): Unit = {
 
     val consumer: Sink[(String, AckableOffset), Future[Done]] =
       Sink.foreach(_._2.ack())
@@ -38,12 +40,16 @@ object Go {
 
       val flow =
         Flow[(String, AckableOffset)].map((x: (String, AckableOffset)) => {
-          if (pp && x._1.charAt(0) == '{') {
+          if (verbose) println(s"consumer pid $pid received:")
+          if (line) {
+            val lineTxt: String = x._1.split('\n').map(_.trim.filter(_ >= ' ')).mkString
+            println(lineTxt)
+          }
+          else if (pp && x._1.charAt(0) == '{') {
             val parsedJson: JValue = parse(x._1)
-            println(
-              s"consumer pid $pid received:\n${pretty(render(parsedJson))}")
+            println(parsedJson)
           } else {
-            println(s"consumer pid $pid received:\n${x._1}")
+            println(x._1)
           }
           x
         })
@@ -59,6 +65,8 @@ object Cli extends App {
 
   val conf = new CliConf(args)
   val pp: Boolean = conf.pretty()
+  val line: Boolean = conf.line()
+  val verbose: Boolean = conf.verbose()
 
   val p: Int = conf.partitions()
   val c: String = conf.consumerGroup.getOrElse("$Default")
@@ -73,6 +81,6 @@ object Cli extends App {
     .withValue("connection.defaultOffset", ConfigValueFactory.fromAnyRef(o))
     .withValue("connection.connStr", ConfigValueFactory.fromAnyRef(s))
 
-  Go(cfg, pp)
+  Go(cfg, pp, line, verbose)
 
 }
