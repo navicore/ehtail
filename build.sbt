@@ -36,7 +36,7 @@ libraryDependencies ++=
     "com.typesafe.akka" %% "akka-actor" % akkaVersion,
     "com.typesafe.akka" %% "akka-stream" % akkaVersion,
 
-    "org.json4s" %% "json4s-native" % "3.6.8",
+    "org.json4s" %% "json4s-native" % "3.6.9",
 
     "org.rogach" %% "scallop" % "3.4.0",
 
