@@ -38,7 +38,7 @@ libraryDependencies ++=
 
     "org.json4s" %% "json4s-native" % "3.6.9",
 
-    "org.rogach" %% "scallop" % "3.4.0",
+    "org.rogach" %% "scallop" % "3.5.0",
 
     "org.scalatest" %% "scalatest" % "3.2.0" % "test"
 
