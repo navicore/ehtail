@@ -40,7 +40,7 @@ libraryDependencies ++=
 
     "org.rogach" %% "scallop" % "3.5.1",
 
-    "org.scalatest" %% "scalatest" % "3.2.1" % "test"
+    "org.scalatest" %% "scalatest" % "3.2.2" % "test"
 
   )
 
