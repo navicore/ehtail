@@ -10,7 +10,7 @@ import com.typesafe.scalalogging.LazyLogging
 object Conf extends LazyLogging {
 
   val conf: Config = ConfigFactory.load()
-  implicit val actorSystem: ActorSystem = ActorSystem("example", conf)
+  implicit val actorSystem: ActorSystem = ActorSystem("ehtail", conf)
   SerializationExtension(actorSystem)
 
   val decider: Supervision.Decider = {

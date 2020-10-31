@@ -1,4 +1,5 @@
 ENV*.sh
+.bsp
 .ensime
 .ensime_cache/
 *.class
