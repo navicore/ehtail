@@ -1,5 +1,7 @@
 ENV*.sh
 .bsp
+*.xmll
+*.jsonl
 .ensime
 .ensime_cache/
 *.class
