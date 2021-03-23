@@ -27,7 +27,7 @@ libraryDependencies ++=
 
     "tech.navicore" %% "akkaeventhubs" % "1.5.1",
 
-    "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2",
+    "com.typesafe.scala-logging" %% "scala-logging" % "3.9.3",
 
     "com.typesafe" % "config" % "1.4.1",
 
