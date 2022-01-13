@@ -12,7 +12,7 @@ parallelExecution in test := false
 
 version := "0.1.0"
 
-val scala212 = "2.13.7"
+val scala212 = "2.13.8"
 
 scalaVersion := scala212
 
