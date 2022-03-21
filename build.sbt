@@ -16,7 +16,7 @@ val scala212 = "2.13.8"
 
 scalaVersion := scala212
 
-val akkaVersion = "2.6.18"
+val akkaVersion = "2.6.19"
 
 val main = Project(id = "EhTail", base = file("."))
 
