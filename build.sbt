@@ -25,7 +25,7 @@ resolvers += Resolver.jcenterRepo // for redis
 libraryDependencies ++=
   Seq(
 
-    "tech.navicore" %% "akkaeventhubs" % "1.6.2",
+    "tech.navicore" %% "akkaeventhubs" % "1.6.3",
 
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",
 
