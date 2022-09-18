@@ -31,7 +31,7 @@ libraryDependencies ++=
 
     "com.typesafe" % "config" % "1.4.2",
 
-    "ch.qos.logback" % "logback-classic" % "1.4.0",
+    "ch.qos.logback" % "logback-classic" % "1.4.1",
 
     "com.typesafe.akka" %% "akka-actor" % akkaVersion,
     "com.typesafe.akka" %% "akka-stream" % akkaVersion,
