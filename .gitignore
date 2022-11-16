@@ -1,3 +1,5 @@
+project/metals.sbt
+project/project/
 ENV*.sh
 .bsp
 *.xmll
